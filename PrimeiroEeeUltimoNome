@@ -1,0 +1,58 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    printf("Escreva o seu nome: \n");
+    char nome[100];
+    int i;
+    int quantidade = 0;
+    int ultimosCaracteres = 0;
+    for(i = 0; i < 100; i++)
+    {
+        scanf("%c", &nome[i]);
+        if(nome[i] == '\n') {
+            nome[i] = '\0';
+            break;
+        }
+        quantidade++;
+        if(nome[i] == ' ')
+        {
+            ultimosCaracteres = i;
+        }
+    }
+    
+    nome[i] = '\0';
+    int primeiroNomeQuantidade = 0;
+    for(i = 0; i < quantidade; i++)
+    {
+        if(nome[i] == ' ')
+        {
+            primeiroNomeQuantidade = i;
+            break;
+        }
+    }
+    
+    for(i = 0; i < primeiroNomeQuantidade; i++)
+    {
+        printf("%c", nome[i]);
+    }
+    printf("\n");
+    
+    int ultimoNomeQntd = 0;
+    
+    for(i = ultimosCaracteres + 1; i < quantidade; i++)
+    {
+        printf("%c", nome[i]);
+    }
+    
+
+    return 0;
+}
